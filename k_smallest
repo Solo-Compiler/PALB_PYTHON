@@ -1,0 +1,15 @@
+print("How many elements you want in your list:")
+n=int(input())
+lst=[]
+for i in range(0,n):
+    x=int(input())
+    lst.append(x)
+for i in range(0,n):
+    for j in range(i+1,n):
+        if(lst[i]>lst[j]):
+            temp=lst[i]
+            lst[i]=lst[j]
+            lst[j]=temp
+print("Enter the kth smallest element you want to find:")
+k=int(input())
+print(lst[k-1])
