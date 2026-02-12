@@ -1,0 +1,16 @@
+#Chocolate Distribution
+
+class Solution:
+
+    def findMinDiff(self, arr,M):
+        # code here
+        min=9999999
+        arr.sort()
+        for i in range(0,len(arr)-M+1):
+            j=i+M-1
+            if j<len(arr):
+                temp=arr[j]-arr[i]
+            if min>temp:
+                min=temp
+        return min
+        
