@@ -13,4 +13,26 @@ class Solution:
             if min>temp:
                 min=temp
         return min
+#Smallest subarray with sum greater than x
+class Solution:
+    def smallestSubWithSum(self, x, arr):
+        # Your code goes here 
+        sum=0
+        i=0
+        j=i
+        window=len(arr)
+        sum=0
+        temp=0
+        while i<len(arr)-1 and j<len(arr):
+            sum=arr[j]+sum
+            while sum>x:
+                temp=j-i+1
+                if window>temp:
+                    window=temp
+                sum=sum-arr[i]
+                i+=1
+            j+=1
+        if window==len(arr) and temp==0:
+            return 0
+        return window
         
